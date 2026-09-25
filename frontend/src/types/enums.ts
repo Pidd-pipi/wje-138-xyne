@@ -3,3 +3,4 @@ export enum DispatchStatus { Pending = 'Pending', Assigned = 'Assigned', InProgr
 export enum MaintenanceType { Routine = 'Routine', Repair = 'Repair', Emergency = 'Emergency', Inspection = 'Inspection' }
 export enum DriverStatus { Available = 'Available', OnTrip = 'OnTrip', Leave = 'Leave', Suspended = 'Suspended' }
 export enum PaymentMethod { Cash = 'Cash', Card = 'Card', Company = 'Company' }
+export enum FuelAlertStatus { Pending = 'Pending', Closed = 'Closed' }

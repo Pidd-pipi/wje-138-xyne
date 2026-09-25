@@ -5,7 +5,7 @@ from fleet_app.views.vehicle_views import vehicles
 from fleet_app.views.driver_views import drivers
 from fleet_app.views.dispatch_views import dispatch_orders
 from fleet_app.views.maintenance_views import maintenance_records
-from fleet_app.views.fuel_views import fuel_records
+from fleet_app.views.fuel_views import fuel_alert_close, fuel_alerts, fuel_records
 
 @api_view(['GET'])
 def health(request):
@@ -18,4 +18,6 @@ urlpatterns = [
     path('dispatch-orders/', dispatch_orders),
     path('maintenance-records/', maintenance_records),
     path('fuel-records/', fuel_records),
+    path('fuel-alerts/', fuel_alerts),
+    path('fuel-alerts/<int:alert_id>/close/', fuel_alert_close),
 ]

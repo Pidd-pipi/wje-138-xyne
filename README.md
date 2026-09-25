@@ -77,6 +77,7 @@ backend/
 - DispatchStatus：frontend/src/types/enums.ts；frontend/src/types/dispatch.ts；frontend/src/hooks/useDispatch.ts；backend/fleet_app/models.py；backend/fleet_app/services/dispatch_service.py
 - MaintenanceType：frontend/src/types/enums.ts；frontend/src/types/maintenance.ts；frontend/src/pages/MaintenanceManage.tsx；backend/fleet_app/models.py；backend/fleet_app/services/maintenance_service.py
 - DriverStatus：frontend/src/types/enums.ts；frontend/src/types/driver.ts；backend/fleet_app/models.py；backend/fleet_app/services/driver_service.py
+- FuelAlertStatus：frontend/src/types/enums.ts；frontend/src/types/fuel.ts；frontend/src/pages/FuelAnalytics.tsx；backend/fleet_app/services/fuel_alert_service.py
 
 ## License
 
