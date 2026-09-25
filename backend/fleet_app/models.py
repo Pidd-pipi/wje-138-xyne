@@ -59,3 +59,26 @@ class FuelRecord(models.Model):
     mileage = models.IntegerField(default=0)
     station = models.CharField(max_length=120)
     payment_method = models.CharField(max_length=24)
+
+# ===== 油耗异常核查 =====
+class FuelAlert(models.Model):
+    ALERT_OPEN = 'Open'
+    ALERT_CLOSED = 'Closed'
+    STATUS_CHOICES = [(ALERT_OPEN, '待核查'), (ALERT_CLOSED, '已关闭')]
+
+    vehicle_id = models.IntegerField()
+    previous_refuel_id = models.IntegerField()
+    current_refuel_id = models.IntegerField()
+    previous_refuel = models.JSONField(default=dict)
+    current_refuel = models.JSONField(default=dict)
+    measured_consumption = models.FloatField(default=0)
+    baseline_consumption = models.FloatField(default=0)
+    increase_percent = models.FloatField(default=0)
+    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default=ALERT_OPEN)
+    reason = models.TextField(blank=True, default='')
+    inspector = models.CharField(max_length=40, blank=True, default='')
+    created_at = models.DateTimeField(auto_now_add=True)
+    closed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ('vehicle_id', 'previous_refuel_id', 'current_refuel_id')

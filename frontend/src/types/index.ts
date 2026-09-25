@@ -4,3 +4,4 @@ export * from './driver';
 export * from './dispatch';
 export * from './maintenance';
 export * from './fuel';
+export * from './fuelAlert';
